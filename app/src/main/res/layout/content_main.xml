@@ -4,17 +4,189 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/orange"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <TextView
+    <Button
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginTop="20dp"
+        android:text="Title Screen"
+        app:layout_constraintEnd_toEndOf="@+id/step2"
+        app:layout_constraintStart_toEndOf="@+id/step2"
+        app:layout_constraintTop_toBottomOf="@+id/shower" />
+
+    <Button
+        android:id="@+id/step1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:text="Step 1"
+        app:layout_constraintBaseline_toBaselineOf="@+id/step2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/step2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="44dp"
+        android:text="Step 2"
+        app:layout_constraintStart_toEndOf="@+id/step1"
+        app:layout_constraintTop_toTopOf="@+id/title" />
+
+    <Button
+        android:id="@+id/step3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:text="Step 3"
+        app:layout_constraintEnd_toStartOf="@+id/step4"
+        app:layout_constraintTop_toTopOf="@+id/step2" />
+
+    <Button
+        android:id="@+id/step4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
+        android:text="Step 4"
+        app:layout_constraintBaseline_toBaselineOf="@+id/step3"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/orange_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="97dp"
+        android:src="@drawable/orange"
+        app:layout_constraintEnd_toStartOf="@+id/textbox"
+        app:layout_constraintStart_toStartOf="@+id/textbox"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/orange" />
+
+    <TextView
+        android:id="@+id/textbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/orange_title" />
+
+    <TextView
+        android:id="@+id/description1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:text="Acquire Orange"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:visibility="invisible"
+        app:layout_constraintBaseline_toBaselineOf="@+id/description3"
+        app:layout_constraintStart_toStartOf="@+id/description2" />
+
+    <TextView
+        android:id="@+id/description2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginBottom="10dp"
+        android:text="Turn On Your Shower"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/consume_orange"
+        app:layout_constraintStart_toStartOf="@+id/consume_orange" />
+
+    <TextView
+        android:id="@+id/description3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:text="Enter Your Shower and Peel the Orange"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:visibility="invisible"
+        app:layout_constraintBaseline_toBaselineOf="@+id/description2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/description4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:text="CONSUME"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:visibility="invisible"
+        app:layout_constraintBaseline_toBaselineOf="@+id/description3"
+        app:layout_constraintStart_toStartOf="@+id/description1" />
+
+    <ImageView
+        android:id="@+id/consume_orange"
+        android:layout_width="208dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginBottom="84dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/peeling"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/peeling"
+        app:srcCompat="@drawable/consuming_orange" />
+
+    <ImageView
+        android:id="@+id/peeling"
+        android:layout_width="271dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="44dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/textbox"
+        app:layout_constraintStart_toStartOf="@+id/textbox"
+        app:layout_constraintTop_toTopOf="@+id/textbox"
+        app:srcCompat="@drawable/orange_shower" />
+
+    <ImageView
+        android:id="@+id/shower"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginLeft="62dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginRight="62dp"
+        android:layout_marginBottom="21dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/consume_orange"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/description3"
+        app:srcCompat="@drawable/shower" />
+
+    <ImageView
+        android:id="@+id/orange_bush"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="86dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginBottom="83dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textbox"
+        app:srcCompat="@drawable/orange_bush" />
 
 </android.support.constraint.ConstraintLayout>
